@@ -15,6 +15,7 @@
         v-for="user in userList"
         :key="user.id"
         :person="user"
+        @remove-user="removeUser"
       ></SingleUser>
     </tbody>
   </table>

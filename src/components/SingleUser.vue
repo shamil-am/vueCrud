@@ -7,7 +7,8 @@
     <td>{{ person.address.street }}</td>
     <td>{{ person.phone }}</td>
     <td>
-      <button class="btn btn-danger" @click="removeUser(user)">X</button>
+      <button class="btn btn-danger" @click="removeUser(person)">X</button>
+      <!-- <button class="btn btn-primary" @click="logUser(person)">log</button> -->
     </td>
   </tr>
 </template>
@@ -16,6 +17,14 @@
 export default {
   name: "SingleUser",
   props: ["person"],
+  methods: {
+    removeUser(person) {
+      this.$emit("remove-user", person);
+    },
+    // logUser(person){
+    //   console.log("user",person)
+    // }
+  },
 };
 </script>
 
