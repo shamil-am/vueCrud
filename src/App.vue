@@ -2,7 +2,12 @@
   <div>
     <h1>My shop</h1>
     <AddUser @form-submit="addNewUser" />
-    <UserList :userList="userList" @remove-user="removeUser" />
+    <UserList
+      :userList="userList"
+      @remove-user="removeUser"
+      :userForEdit="userForEdit"
+      @edit-user="editThisUser"
+    />
   </div>
 </template>
 
@@ -245,6 +250,7 @@ export default {
           },
         },
       ],
+      userForEdit: {},
     };
   },
   components: {
@@ -262,6 +268,9 @@ export default {
     },
     addNewUser(newUser) {
       this.userList = [...this.userList, newUser];
+    },
+    editThisUser(person) {
+      this.userForEdit = person;
     },
   },
 };

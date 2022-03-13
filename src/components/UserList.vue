@@ -16,6 +16,8 @@
         :key="user.id"
         :person="user"
         @remove-user="removeUser"
+        :userForEdit="userForEdit"
+        @edit-user="editThisUser"
       ></SingleUser>
     </tbody>
   </table>
@@ -30,10 +32,14 @@ export default {
   },
   props: {
     userList: Array,
+    userForEdit: Object,
   },
   methods: {
     removeUser(user) {
       this.$emit("remove-user", user);
+    },
+    editThisUser(person) {
+      this.$emit("edit-user", person);
     },
   },
 };
