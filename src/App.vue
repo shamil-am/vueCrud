@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>My shop</h1>
+    <AddUser @form-submit="addNewUser" />
     <UserList :userList="userList" @remove-user="removeUser" />
   </div>
 </template>
 
 <script>
+import AddUser from "./components/AddUser.vue";
 import UserList from "./components/UserList.vue";
 export default {
   name: "App",
@@ -247,6 +249,7 @@ export default {
   },
   components: {
     UserList,
+    AddUser,
   },
   methods: {
     removeUser(user) {
@@ -256,6 +259,9 @@ export default {
             return userL.id !== user.id;
           }))
         : null;
+    },
+    addNewUser(newUser) {
+      this.userList = [...this.userList, newUser];
     },
   },
 };
