@@ -18,6 +18,8 @@
         @remove-user="removeUser"
         :userForEdit="userForEdit"
         @edit-user="editThisUser"
+        @save-update="saveUpdate"
+        @cancel-editing="cancelEditing"
       ></SingleUser>
     </tbody>
   </table>
@@ -40,6 +42,12 @@ export default {
     },
     editThisUser(person) {
       this.$emit("edit-user", person);
+    },
+    saveUpdate(editingUser) {
+      this.$emit("save-update", editingUser);
+    },
+    cancelEditing() {
+      this.$emit("cancel-editing");
     },
   },
 };

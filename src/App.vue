@@ -7,6 +7,8 @@
       @remove-user="removeUser"
       :userForEdit="userForEdit"
       @edit-user="editThisUser"
+      @save-update="saveUpdate"
+      @cancel-editing="cancelEditing"
     />
   </div>
 </template>
@@ -271,6 +273,18 @@ export default {
     },
     editThisUser(person) {
       this.userForEdit = person;
+    },
+    saveUpdate(editingUser) {
+      this.userList = this.userList.map((user) => {
+        if (user.id === editingUser.id) {
+          return editingUser;
+        }
+        return user;
+      });
+      this.userForEdit = {};
+    },
+    cancelEditing() {
+      this.userForEdit = {};
     },
   },
 };

@@ -52,14 +52,24 @@ export default {
         id: Date.now(),
         name: "",
         username: "",
-        company: {
-          name: "",
-        },
+        email: "",
         address: {
           street: "",
+          suite: "",
           city: "",
+          zipcode: "",
+          geo: {
+            lat: "",
+            lng: "",
+          },
         },
         phone: "",
+        website: "",
+        company: {
+          name: "",
+          catchPhrase: "",
+          bs: "",
+        },
       },
     };
   },
@@ -72,14 +82,24 @@ export default {
         id: Date.now(),
         name: "",
         username: "",
-        company: {
-          name: "",
-        },
+        email: "",
         address: {
           street: "",
+          suite: "",
           city: "",
+          zipcode: "",
+          geo: {
+            lat: "",
+            lng: "",
+          },
         },
         phone: "",
+        website: "",
+        company: {
+          name: "",
+          catchPhrase: "",
+          bs: "",
+        },
       };
     },
   },
