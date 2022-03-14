@@ -49,7 +49,6 @@ export default {
   data() {
     return {
       newUser: {
-        id: Date.now(),
         name: "",
         username: "",
         email: "",
@@ -79,7 +78,6 @@ export default {
       this.$emit("form-submit", this.newUser);
       //reset fields
       this.newUser = {
-        id: Date.now(),
         name: "",
         username: "",
         email: "",
